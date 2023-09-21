@@ -8,7 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 void main() {
-  runApp(const MaterialApp(home: ScannerResult(res: 'dfdff',),));
+  runApp(const MaterialApp(home: MyApp(),));
 }
 
 

@@ -152,7 +152,7 @@ class ProductVariantEntity {
     int id;
     double price;
     int minimumOrder;
-    int discount;
+    double discount;
     double manualPrice;
     bool pStatus;
     int stock;

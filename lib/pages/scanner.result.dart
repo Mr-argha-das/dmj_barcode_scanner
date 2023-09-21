@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:dmjstockmage/api/api.get.barcode.data.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+
 import '../model/product.data.model.dart';
 
 class ScannerResult extends StatefulWidget {
@@ -13,7 +13,7 @@ class ScannerResult extends StatefulWidget {
   State<ScannerResult> createState() => _ScannerResultState();
 }
 
-class _ScannerResultState extends State<ScannerResult> {
+class _ScannerResultState extends State<ScannerResult> with GetBarcodeData{
    late Future<ProductData> futureAlbum;
   @override
   void initState() {
@@ -21,20 +21,7 @@ class _ScannerResultState extends State<ScannerResult> {
     futureAlbum = getBarcodeData(barcode: widget.res);
   }
 
-  Future<ProductData> getBarcodeData({required String barcode}) async {
-  final response = await http
-      .get(Uri.parse('https://api.diwamjewels.com/DMJ/api/v1/products/barCode/$barcode'));
-
-  if (response.statusCode == 200) {
-    // If the server did return a 200 OK response,
-    // then parse the JSON.
-    return ProductData.fromJson(jsonDecode(response.body));
-  } else {
-    // If the server did not return a 200 OK response,
-    // then throw an exception.
-    throw Exception('Failed to load album');
-  }
-}
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +42,7 @@ class _ScannerResultState extends State<ScannerResult> {
         children: [
 
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               FutureBuilder<ProductData>(
