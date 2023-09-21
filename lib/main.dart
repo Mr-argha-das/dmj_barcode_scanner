@@ -33,6 +33,7 @@ class _MyAppState extends State<MyApp> {
           '#ff6666', 'Cancel', true, ScanMode.BARCODE);
         if(barcodeScanRes != null){
           // ignore: use_build_context_synchronously
+          
           Navigator.push(context, MaterialPageRoute(builder: (context) =>  ScannerResult(res: barcodeScanRes!,)));
         }
       print(barcodeScanRes);
