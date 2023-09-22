@@ -1,4 +1,5 @@
 import 'package:dmjstockmage/pages/homepage.dart';
+import 'package:dmjstockmage/pages/manual_barcode.dart';
 import 'package:dmjstockmage/pages/products.dart';
 import 'package:dmjstockmage/pages/scanner.dart';
 import 'package:dmjstockmage/pages/scanner.result.dart';
@@ -10,7 +11,7 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: Login_page(),
+    home: ManualBarcode(),
   ));
 }
 
