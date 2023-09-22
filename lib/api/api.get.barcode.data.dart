@@ -1,7 +1,6 @@
 
 import 'dart:convert';
-
-import 'package:flutter/material.dart';
+import 'dart:developer';
 import 'package:http/http.dart' as http;
 
 import '../model/product.data.model.dart';
@@ -13,6 +12,7 @@ class GetBarcodeData{
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
+    log(response.body.toString());
     return ProductData.fromJson(jsonDecode(response.body));
   } else {
     // If the server did not return a 200 OK response,

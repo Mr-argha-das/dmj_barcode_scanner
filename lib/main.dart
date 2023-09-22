@@ -2,6 +2,7 @@ import 'package:dmjstockmage/pages/homepage.dart';
 import 'package:dmjstockmage/pages/products.dart';
 import 'package:dmjstockmage/pages/scanner.dart';
 import 'package:dmjstockmage/pages/scanner.result.dart';
+import 'package:dmjstockmage/pages/test.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
